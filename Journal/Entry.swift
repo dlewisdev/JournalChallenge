@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Entry: Identifiable {
+    var id: UUID = UUID()
+    var text: String
+    var photo: String = "journal"
+}

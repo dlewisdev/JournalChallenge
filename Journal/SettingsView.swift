@@ -8,11 +8,50 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Binding var isPublic: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Toggle(isOn: $isPublic) {
+                Text(isPublic ? "Public" : "Private")
+            }
+            .padding()
+            .toggleStyle(.switch)
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+        }
     }
 }
 
 #Preview {
-    SettingsView()
+    SettingsView(isPublic: .constant(true))
 }

@@ -8,17 +8,29 @@
 import SwiftUI
 
 struct MainView: View {
+    @Binding var isPublic: Bool
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            JournalView(isPublic: $isPublic)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "book.pages")
+                        Text("Journal")
+                    }
+                }
+            
+            SettingsView(isPublic: $isPublic)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "gear")
+                        Text("Settings  ")
+                    }
+                }
         }
-        .padding()
     }
 }
 
 #Preview {
-    MainView()
+    MainView(isPublic: .constant(true))
 }

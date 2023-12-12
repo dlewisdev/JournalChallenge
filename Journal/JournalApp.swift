@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct JournalApp: App {
+    @State var isPublic: Bool = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView(isPublic: $isPublic)
         }
     }
 }

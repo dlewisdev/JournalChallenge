@@ -8,11 +8,33 @@
 import SwiftUI
 
 struct PhotoView: View {
+    @Binding var isShowing: Bool
+    @Binding var photo: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Image(photo)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            
+            Button {
+                isShowing = false
+            } label: {
+                VStack {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "x.circle")
+                            .scaleEffect(2)
+                            .padding()
+                    }
+                    Spacer()
+                }
+            }
+            .buttonStyle(.plain)
+        }
     }
 }
 
 #Preview {
-    PhotoView()
+    PhotoView(isShowing: .constant(true), photo: .constant("journal"))
 }
